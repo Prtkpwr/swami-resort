@@ -267,12 +267,11 @@
 
 <script src="js/map.scripts.js"></script> 
 <script>
-let key = "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"
 let sendMail = function() {
 $.ajax({
     url: 'https://api.sendgrid.com/v3/mail/send',
     type: "POST",
-    headers:{"Authorization":"Bearer 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","Content-Type": "application/json"},
+    headers:{"Authorization":"Bearer token here","Content-Type": "application/json"},
     contentType: "application/json",
     data: `{"personalizations": [{"to": [{"email": "pratik010pawar@gmail.com"}]}],"from": {"email": ${$("email").val()}},"subject": "New Booking","content": [{"type": "text/plain", "value": My name is ${$("name").val()} . ${$("#message").val()}.]}`,
     error: function(jqXHR,status) {
@@ -286,6 +285,4 @@ $.ajax({
 };
 </script>
 </body>
-
-<!-- Mirrored from unicoderbd.com/theme/html/vilena/light/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Jan 2020 13:36:22 GMT -->
 </html>
